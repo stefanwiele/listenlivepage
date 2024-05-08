@@ -1,0 +1,118 @@
+/* styles.css */
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: white;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+a {
+    color: #fff;
+}
+.container {
+    text-align: center;
+    max-width: 100%; /* Pas dit aan naar je gewenste maximale breedte */
+    margin: 0 auto; /* Horizontaal centreren */
+    padding: 20px;
+    position:relative;
+}
+
+.logo {
+    float: none;
+}
+
+.whatsapp {
+    max-width: 100%; /* Pas dit aan naar je gewenste maximale breedte */
+    margin: 20px auto; /* Horizontaal centreren met wat ruimte eromheen */
+    padding: 10px;        
+    text-align: center;
+    
+    
+}
+
+.metadata {
+    max-width: 100%; 
+    margin: 20px auto; 
+    padding: 10px;        
+    text-align: center;
+    
+}
+.metadataArtist
+ {    
+    padding-top: 20px;
+    font-weight: bold;
+    font-size: 40px;
+}
+
+.metadataTitle
+ {
+    font-size: 30px;
+}
+
+
+video {
+    width: 100%;
+    max-width: 800px;
+}
+
+button {
+    margin-top: 10px;
+}
+video {
+    display: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+button#playPauseButton {
+    width: 80px;
+    height: 40px;
+    border: none;
+    border-radius: 20px; 
+    background-color: #048cd4; 
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: transform 0.2s ease; 
+}
+
+/* Style for the "Pause" state */
+button#playPauseButton.pause {
+    background-color: #e74c3c; 
+}
+
+/* Hover effect: Scale up slightly */
+button#playPauseButton:hover {
+    transform: scale(1.05); 
+}
+.whatsapp-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #25D366; /* Groene kleur van WhatsApp */
+    border-radius:20px; /* Maak de knop ovaal */
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    color: #fff;
+    text-decoration: none;
+}
+/* Hover effect: Scale up slightly */
+.whatsapp-button:hover {
+    transform: scale(1.05); /* Increase the size by 5% */
+}
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 80px;
+    background-color: #048cd4;
+    color: white;
+    text-align: center;
+}

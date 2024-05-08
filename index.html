@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">   
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+
+    <link rel="stylesheet" href="./css/styles.css">
+    <title>Experts Live Radio - Luister Live</title>
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+    
+
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <img src="./img/logo.png" alt="Experts Live Radio Logo">
+        </div>
+        <div class="player">
+            <video id="hlsPlayer" controls></video>
+            <button id="playPauseButton">Play</button>
+            <input type="range" id="volumeControl" min="0" max="1" step="0.01" value="1">
+        </div>        
+        <div class="metadataArtist" id="metadataArtist"></div>
+        <div class="metadataTitle" id="metadataTitle"></div>
+        
+        <div class="whatsapp">
+            <a href="https://wa.me/31853450999" class="whatsapp-button">
+                Stuur een bericht naar de studio
+            </a>
+        </div>
+        <div class="footer">
+            Meer info: <a href="https://expertslive.nl/" target="_blank">Experts Live Nederland</a>
+        </div>
+    </div>
+    
+    <script src="./scripts/metadata.js"></script>    
+    <script src="./scripts/player.js"></script>
+
+</body>
+</html>
