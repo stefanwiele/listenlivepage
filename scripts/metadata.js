@@ -16,6 +16,8 @@ function updateMetadata() {
         });
 }
 
-// Roep de functie elke 30 seconden aan
+// Initial load
 updateMetadata();
+
+// Roep de functie elke 30 seconden aan
 setInterval(updateMetadata, 30000);
