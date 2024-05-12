@@ -2,10 +2,13 @@
 const hlsPlayer = document.getElementById('hlsPlayer');
 const playPauseButton = document.getElementById('playPauseButton');
 const volumeControl = document.getElementById('volumeControl');
-var airPlay = document.getElementById('airplay');
-var castButton = document.getElementById('cast');
+const airPlay = document.getElementById('airplay');
+const castButton = document.getElementById('cast');
 
+// HLS stream url
 const HLSStreamUrl = 'https://streams.radiomast.io/d12679e5-06b3-4f6c-ae90-4fe125e30dfb/hls.m3u8';
+
+// stream url
 const StreamUrl = 'https://streams.radiomast.io/d12679e5-06b3-4f6c-ae90-4fe125e30dfb';
 
 // Initialize HLS.js
@@ -55,11 +58,11 @@ if (window.WebKitPlaybackTargetAvailabilityEvent) {
 
 
 //Chromecast
-                // Create new Castjs instance
-                const cjs = new Castjs();
+// Create new Castjs instance
+    const cjs = new Castjs();
                 
-                // Wait for user interaction
-                document.getElementById('cast').addEventListener('click', function() {
+    // Wait for user interaction
+        document.getElementById('cast').addEventListener('click', function() {
                     // Check if casting is available
                     if (cjs.available) {
                         // Initiate new cast session with a simple video
@@ -69,6 +72,6 @@ if (window.WebKitPlaybackTargetAvailabilityEvent) {
                             description     : 'Het radiostation van en door de Microsoft community!'
                         });
                        
-                    }})
+        }})
 
 
