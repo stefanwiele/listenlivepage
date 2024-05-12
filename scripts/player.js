@@ -5,10 +5,11 @@ const volumeControl = document.getElementById('volumeControl');
 var airPlay = document.getElementById('airplay');
 
 const HLSStreamUrl = 'https://streams.radiomast.io/d12679e5-06b3-4f6c-ae90-4fe125e30dfb/hls.m3u8';
+const StreamUrl = 'https://streams.radiomast.io/d12679e5-06b3-4f6c-ae90-4fe125e30dfb';
 
 // Initialize HLS.js
 if (hlsPlayer.canPlayType('application/vnd.apple.mpegurl')) {
-    hlsPlayer.src = 'https://streams.radiomast.io/d12679e5-06b3-4f6c-ae90-4fe125e30dfb';
+    hlsPlayer.src = StreamUrl;
 }
 else if (Hls.isSupported()) {
     const hls = new Hls();
@@ -49,3 +50,23 @@ if (window.WebKitPlaybackTargetAvailabilityEvent) {
 }else {
     airPlay.style.display = 'none';
 }
+
+
+//Chromecast
+                // Create new Castjs instance
+                const cjs = new Castjs();
+                
+                // Wait for user interaction
+                document.getElementById('cast').addEventListener('click', function() {
+                    // Check if casting is available
+                    if (cjs.available) {
+                        // Initiate new cast session with a simple video
+                        cjs.cast(StreamUrl, {
+                            poster          : 'https://expertslive.radio/img/logo.png',
+                            title           : 'Experts Live Radio',
+                            description     : 'Het radiostation van en door de Microsoft community!'
+                        });
+                       
+                    }})
+
+
