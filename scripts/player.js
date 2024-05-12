@@ -3,6 +3,7 @@ const hlsPlayer = document.getElementById('hlsPlayer');
 const playPauseButton = document.getElementById('playPauseButton');
 const volumeControl = document.getElementById('volumeControl');
 var airPlay = document.getElementById('airplay');
+var castButton = document.getElementById('cast');
 
 const HLSStreamUrl = 'https://streams.radiomast.io/d12679e5-06b3-4f6c-ae90-4fe125e30dfb/hls.m3u8';
 const StreamUrl = 'https://streams.radiomast.io/d12679e5-06b3-4f6c-ae90-4fe125e30dfb';
@@ -39,6 +40,7 @@ if (window.WebKitPlaybackTargetAvailabilityEvent) {
         switch (event.availability) {
             case "available":
                 airPlay.style.display = 'block';
+                castButton.style.display = 'none';
                 break;
             default:
                 airPlay.style.display = 'none';
