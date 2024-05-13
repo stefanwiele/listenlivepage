@@ -4,6 +4,7 @@ const playPauseButton = document.getElementById('playPauseButton');
 const volumeControl = document.getElementById('volumeControl');
 const airPlay = document.getElementById('airplay');
 const castButton = document.getElementById('cast');
+const watchLiveUrl = './video.html';
 
 // HLS stream url
 const HLSStreamUrl = 'https://streams.radiomast.io/d12679e5-06b3-4f6c-ae90-4fe125e30dfb/hls.m3u8';
@@ -30,6 +31,11 @@ playPauseButton.addEventListener('click', () => {
         hlsPlayer.pause();
         playPauseButton.textContent = 'Play';
     }
+});
+
+// Play/Pause button functionality
+watchLiveButton.addEventListener('click', () => {    
+    window.open(watchLiveUrl, '_blank').focus();
 });
 
 // Volume control

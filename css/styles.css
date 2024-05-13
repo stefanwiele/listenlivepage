@@ -85,6 +85,18 @@ button#playPauseButton {
     transition: transform 0.2s ease; 
 }
 
+button#watchLiveButton {
+    width: 80px;
+    height: 40px;
+    border: none;
+    border-radius: 20px; 
+    background-color: #1c3484; 
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: transform 0.2s ease; 
+}
+
 /* Style for the "Pause" state */
 button#playPauseButton.pause {
     background-color: #e74c3c; 
@@ -92,6 +104,10 @@ button#playPauseButton.pause {
 
 /* Hover effect: Scale up slightly */
 button#playPauseButton:hover {
+    transform: scale(1.05); 
+}
+/* Hover effect: Scale up slightly */
+button#watchLiveButton:hover {
     transform: scale(1.05); 
 }
 .whatsapp-button {
