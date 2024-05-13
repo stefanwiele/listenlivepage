@@ -86,7 +86,7 @@ button#playPauseButton {
 }
 
 button#watchLiveButton {
-    width: 80px;
+    width: 100px;
     height: 40px;
     border: none;
     border-radius: 20px; 
