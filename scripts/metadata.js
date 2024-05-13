@@ -2,27 +2,34 @@
 // get metadata from radiomast endpoint
 
 const metadataEndpoint = 'https://streams.radiomast.io/d12679e5-06b3-4f6c-ae90-4fe125e30dfb/metadata';
+const metadataArtistDiv = document.getElementById('metadataArtist');
+const metadataTitleDiv = document.getElementById('metadataTitle');
 
-function updateMetadata() {
-    fetch(metadataEndpoint)
-        .then(response => response.json())
-        .then(data => {
-            const metadataArtistDiv = document.getElementById('metadataArtist');
-            const metadataTitleDiv = document.getElementById('metadataTitle');
+function updateMetadataEvent() {
+    document.addEventListener("DOMContentLoaded", function() {
 
-            // split artist and title
-            metadataSplit = data.metadata.split(" - ");
+           
+        try {
+            var url = metadataEndpoint;
+            var eventSource = new EventSource(url);
+    
+            eventSource.onmessage = function(event) {
+                var metadata = JSON.parse(event.data);
+                var artistTitle = metadata['metadata'];
+    
+                // split artist and title
+            metadataSplit = artistTitle.split(" - ");
 
             metadataArtistDiv.textContent = decodeURIComponent(metadataSplit[0]);
             metadataTitleDiv.textContent = decodeURIComponent(metadataSplit[1]);
-        })
-        .catch(error => {
-            console.error('Fout bij het ophalen van metadata:', error);
-        });
+        
+        }
+        } catch (error) {
+            console.log("EventSource initialization failed");
+            console.log(error);
+        }
+    });
 }
 
 // Initial load
-updateMetadata();
-
-// Call function every 30 seconds
-setInterval(updateMetadata, 30000);
+updateMetadataEvent()
