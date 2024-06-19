@@ -19,16 +19,17 @@
         <div class="logo">
             <img src="./img/logo.png" alt="Experts Live Radio Logo">
         </div>
-        <div class="player">
+        <div class="player" style="display: none;">
             <video id="hlsPlayer" controls x-webkit-airplay="allow"></video>
             <button id="playPauseButton">Play</button>
             <button id="watchLiveButton">Kijk Live</button>
             <input type="range" id="volumeControl" min="0" max="1" step="0.01" value="1" title="Volume Control">
         </div>        
-        <div class="metadataArtist" id="metadataArtist"></div>
-        <div class="metadataTitle" id="metadataTitle"></div>
+        <div class="metadataArtist" id="metadataArtist"  style="display: none;"></div>
+        <div class="metadataTitle" id="metadataTitle" style="display: none;"></div>
+        <div class="backsoon"><h1>We will be back soon!</h1></div>
 
-        <div class="airplay">
+        <div class="airplay" style="display: none;">
             <center><input type="image" src="./img/airplay_icon.png" id="airplay" alt="Airplay Button" />
 
             <input type="image" id="cast" src="./img/chromecast_icon.png" alt="Chromecast Button" /></center>
